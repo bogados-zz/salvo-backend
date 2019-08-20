@@ -1,0 +1,14 @@
+Login
+
+crear un repo
+verificar que se este ingresando una cuenta y contraseña 
+validar que el perfil ingresado exista o manadrlo al abm
+
+dos input
+usuario
+pass
+botones
+ingresar o 
+crear una cuenta
+
+recuperar pass
