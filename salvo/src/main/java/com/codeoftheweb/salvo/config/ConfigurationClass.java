@@ -6,12 +6,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConfigurationClass {
-  //  @Bean
-   // public GameService gameService() {
+    //  @Bean
+    // public GameService gameService() {
     //    return new GameService();
-        //ALT+CTRL+O:remueve imports innecesarios
-        //ALT+CTRL+L: indenta el código
-   // }
+
+    // }
 
 }
 

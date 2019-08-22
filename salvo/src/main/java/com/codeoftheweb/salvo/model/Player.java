@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -22,15 +20,18 @@ public class Player {
     @NotEmpty
     private String username;
 
+    //Empty Constructor
     public Player() {
     }
 
+    //Constructor with parameters
     public Player(String firstName, String lastName, String username) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
     }
 
+    //Getters and Setters
     public Long getId() {
         return id;
     }
@@ -63,6 +64,8 @@ public class Player {
         this.username = username;
     }
 
+
+    //toString Method
     @Override
     public String toString() {
         return "Player{" +

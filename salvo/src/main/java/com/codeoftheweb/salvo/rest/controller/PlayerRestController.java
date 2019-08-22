@@ -17,13 +17,13 @@ public class PlayerRestController {
     private PlayerService playerService;
 
     @GetMapping
-    public List<Player> findAll(){
+    public List<Player> findAll() {
         return playerService.findAll();
 
     }
 
     @GetMapping("/{id}")
-    public Player findPlayerById(@PathVariable("id") Long id){
+    public Player findPlayerById(@PathVariable("id") Long id) {
         //return playerService.findById(id).orElseThrow(()->new RuntimeException());
         return playerService.findById(id).get();
     }
