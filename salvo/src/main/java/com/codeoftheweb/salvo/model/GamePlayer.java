@@ -1,9 +1,6 @@
 package com.codeoftheweb.salvo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,7 +9,9 @@ public class GamePlayer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date joinDate;
+    @ManyToOne
     private Player playerId;
+    @ManyToOne
     private Game gameId;
 
     //Empty Constructor

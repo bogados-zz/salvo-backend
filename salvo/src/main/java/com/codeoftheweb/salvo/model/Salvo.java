@@ -1,14 +1,14 @@
 package com.codeoftheweb.salvo.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Salvo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @ManyToOne
     private GamePlayer gamePlayerId;
     //Se van contando los turnos, cada disparo está asociado con el turno en que se hizo
     private Integer turn;
