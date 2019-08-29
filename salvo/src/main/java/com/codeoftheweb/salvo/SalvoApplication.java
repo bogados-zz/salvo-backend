@@ -1,6 +1,5 @@
 package com.codeoftheweb.salvo;
 
-import com.codeoftheweb.salvo.model.Game;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
