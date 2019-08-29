@@ -22,8 +22,8 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-	
-	public static final String DEFAULT_INCLUDE_PATTERN = "/api/.*";
+
+	public static final String DEFAULT_INCLUDE_PATTERN = "/.*";
 	private final Logger log = LoggerFactory.getLogger(SwaggerConfig.class);
 
 	@Bean
