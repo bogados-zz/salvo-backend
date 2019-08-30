@@ -7,7 +7,7 @@ import java.util.Date;
 public class Score {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     //private Game gameId;
     //private Player playerID;

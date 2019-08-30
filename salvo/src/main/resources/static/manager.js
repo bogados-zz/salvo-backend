@@ -5,10 +5,10 @@ $(function() {
     $("#output").text(text);
   }
 
-  // load and display JSON sent by server for /players
+  // load and display JSON sent by server for /api/players
 
   function loadData() {
-    $.get("/players")
+    $.get("/api/players")
     .done(function(data) {
       showOutput(JSON.stringify(data, null, 2));
     })
@@ -22,12 +22,16 @@ $(function() {
   function addPlayer() {
     var name = $("#email").val();
     if (name) {
+      console.log("Tenemos algo");
       postPlayer(name);
+    } else {
+      console.error("El nombre del user no fue cargado");
     }
   }
 
   // code to post a new player using AJAX
-  // on success, reload and display the updated data from the server
+  // on success, reload and display the
+  // updated data from the server
 
   function postPlayer(userName) {
     $.post({
@@ -35,7 +39,7 @@ $(function() {
           'Content-Type': 'application/json'
       },
       dataType: "text",
-      url: "/players",
+      url: "/api/players",
       data: JSON.stringify({ "userName": userName })
     })
     .done(function( ) {

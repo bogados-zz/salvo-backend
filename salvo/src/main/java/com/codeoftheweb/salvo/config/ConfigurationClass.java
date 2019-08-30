@@ -1,16 +1,16 @@
 package com.codeoftheweb.salvo.config;
 
-import com.codeoftheweb.salvo.service.GameService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConfigurationClass {
-    //  @Bean
-    // public GameService gameService() {
-    //    return new GameService();
 
-    // }
+	@Bean
+	public ObjectMapper objectMapper() {
+		return new ObjectMapper();
+	}
 
 }
 
