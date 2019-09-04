@@ -1,6 +1,7 @@
 package com.codeoftheweb.salvo.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Salvo {
@@ -12,6 +13,8 @@ public class Salvo {
     private GamePlayer gamePlayerId;
     //Se van contando los turnos, cada disparo está asociado con el turno en que se hizo
     private Integer turn;
+    @OneToMany
+    private List<SalvoLocations> salvoLocations;
 
     //Empty Constructor
     public Salvo() {
@@ -49,13 +52,21 @@ public class Salvo {
         this.turn = turn;
     }
 
-    //toString Method
+    public List<SalvoLocations> getSalvoLocations() {
+        return salvoLocations;
+    }
+
+    public void setSalvoLocations(List<SalvoLocations> salvoLocations) {
+        this.salvoLocations = salvoLocations;
+    }
+
     @Override
     public String toString() {
         return "Salvo{" +
                 "id=" + id +
                 ", gamePlayerId=" + gamePlayerId +
                 ", turn=" + turn +
+                ", salvoLocations=" + salvoLocations +
                 '}';
     }
 }

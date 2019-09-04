@@ -1,23 +1,36 @@
 package com.codeoftheweb.salvo.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class SalvoLocations {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
     private Salvo salvoId;
 
     //Es un String con las coordenadas por ejemplo "A10"
+    @NotNull
+    @NotEmpty
     private String cell;
 
     //Empty Constructor
     public SalvoLocations() {
     }
 
-    //Constructor with parameters
-    public SalvoLocations(Salvo salvoId, String cell) {
-        this.salvoId = salvoId;
-        this.cell = cell;
+    public Long getId() {
+        return id;
     }
 
-    //Getters and Setters
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Salvo getSalvoId() {
         return salvoId;
     }
@@ -34,11 +47,11 @@ public class SalvoLocations {
         this.cell = cell;
     }
 
-    //toString Method
     @Override
     public String toString() {
         return "SalvoLocations{" +
-                "salvoId=" + salvoId +
+                "id=" + id +
+                ", salvoId=" + salvoId +
                 ", cell='" + cell + '\'' +
                 '}';
     }

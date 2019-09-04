@@ -2,28 +2,26 @@ package com.codeoftheweb.salvo.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class GamePlayer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date joinDate;
     @ManyToOne
-    private Player playerId;
+    private Player player;
     @ManyToOne
-    private Game gameId;
+    private Game game;
+    @OneToMany
+    private List<Ship> ships;
+    @OneToMany
+    private List<Salvo> salvos;
 
     //Empty Constructor
     public GamePlayer() {
-    }
-
-    //Constructor with parameters
-    public GamePlayer(Long id, Date joinDate, Player playerId, Game gameId) {
-        this.id = id;
-        this.joinDate = joinDate;
-        this.playerId = playerId;
-        this.gameId = gameId;
     }
 
     //Getters and Setters
@@ -43,20 +41,20 @@ public class GamePlayer {
         this.joinDate = joinDate;
     }
 
-    public Player getPlayerId() {
-        return playerId;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setPlayerId(Player playerId) {
-        this.playerId = playerId;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public Game getGameId() {
-        return gameId;
+    public Game getGame() {
+        return game;
     }
 
-    public void setGameId(Game gameId) {
-        this.gameId = gameId;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     //toString Method
@@ -65,8 +63,8 @@ public class GamePlayer {
         return "GamePlayer{" +
                 "id=" + id +
                 ", joinDate=" + joinDate +
-                ", playerId=" + playerId +
-                ", gameId=" + gameId +
+                ", player=" + player +
+                ", game=" + game +
                 '}';
     }
 }
